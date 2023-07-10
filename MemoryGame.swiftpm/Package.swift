@@ -8,20 +8,20 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "MemoryGame",
+    name: "Memorize",
     platforms: [
         .iOS("15.2")
     ],
     products: [
         .iOSApplication(
-            name: "MemoryGame",
+            name: "Memorize",
             targets: ["AppModule"],
             bundleIdentifier: "com.lzheng.MemoryGame",
             teamIdentifier: "8RW3LQJKAM",
             displayVersion: "1.0",
             bundleVersion: "1",
             appIcon: .placeholder(icon: .running),
-            accentColor: .presetColor(.blue),
+            accentColor: .presetColor(.pink),
             supportedDeviceFamilies: [
                 .pad,
                 .phone

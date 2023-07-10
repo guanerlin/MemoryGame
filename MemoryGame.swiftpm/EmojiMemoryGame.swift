@@ -8,6 +8,8 @@
 import SwiftUI
 //viewModel is the gate keeper between view and model
 class EmojiMemoryGame: ObservableObject {
+    typealias Card = MemoryGame<String>.Card
+    
     // ViewModel access control of the Model
     private static let emojis = ["🐸", "🐻‍", "🐹", "🐻‍❄️", "🐥", "🐤", "🐒", "🦆", "🐣", "🐴", "🦉", "🥭", "🍍", "🍆", "🥬", "🌽", "🥕", "🥔", "🧄", "🍠", "🍑", "🍓", "🍎", "🍌", "🍉", "🍐", "🍊", "🍋", "🍒", "🥥"]
 
@@ -18,13 +20,13 @@ class EmojiMemoryGame: ObservableObject {
     }
     @Published var model: MemoryGame<String> = createModel(numberOfPairs: 5)
 
-    var cards: [MemoryGame<String>.Card] {
+    var cards: [Card] {
         return self.model.cards
     }
     
     // MARK: Intent(s）
     
-    func choose(_ card: MemoryGame<String>.Card) {
+    func choose(_ card: Card) {
         model.choose(card: card)
     }
 }
